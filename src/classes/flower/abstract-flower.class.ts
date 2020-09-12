@@ -10,7 +10,7 @@ export abstract class AbstractFlower implements IFlower {
     this._date = new Date();
   }
 
-  get name(): string {
+  get name(): FlowersEnum {
     return this._name;
   }
 

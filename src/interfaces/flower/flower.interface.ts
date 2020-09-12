@@ -1,5 +1,7 @@
+import { FlowersEnum } from "@shared/enums/flowers.enum";
+
 export interface IFlower {
-    name: string;
+    name: FlowersEnum;
     worth: number;
     date: Date;
 }

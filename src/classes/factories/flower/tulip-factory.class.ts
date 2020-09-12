@@ -1,10 +1,10 @@
 import { IFlower } from "@interfaces/flower/flower.interface";
 import { IAbstractFlowerFactory } from "@interfaces/flower/abstract-flower-factory.interface";
-import { Tulip } from "@classes/flower/tulip.class";
+import { TulipFlower } from "@classes/flower/tulip-flower.class";
 
-export class TupilFactory implements IAbstractFlowerFactory {
+export class TulipFactory implements IAbstractFlowerFactory {
   createFlower(): IFlower {
-    const tulip = new Tulip();
+    const tulip = new TulipFlower();
     return tulip;
   }
 }
