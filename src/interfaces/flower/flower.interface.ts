@@ -1,4 +1,4 @@
-import { FlowersEnum } from "@shared/enums/flowers.enum";
+import { FlowersEnum } from "../../shared/enums/flowers.enum";
 
 export interface IFlower {
     name: FlowersEnum;

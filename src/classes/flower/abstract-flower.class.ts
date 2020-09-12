@@ -1,5 +1,5 @@
-import { IFlower } from "@interfaces/flower/flower.interface";
-import { FlowersEnum } from "@shared/enums/flowers.enum";
+import { IFlower } from "../../interfaces/flower/flower.interface";
+import { FlowersEnum } from "../../shared/enums/flowers.enum";
 
 export abstract class AbstractFlower implements IFlower {
   protected readonly _name: FlowersEnum;

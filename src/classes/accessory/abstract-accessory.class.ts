@@ -1,5 +1,5 @@
-import { IAccessory } from "@interfaces/accessory/accessory.interface";
-import { AccessoriesEnum } from "@shared/enums/accessories.enum";
+import { IAccessory } from "../../interfaces/accessory/accessory.interface";
+import { AccessoriesEnum } from "../../shared/enums/accessories.enum";
 
 export class AbstractAccessory implements IAccessory {
   protected readonly _name: AccessoriesEnum;
