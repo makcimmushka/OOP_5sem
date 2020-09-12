@@ -1,7 +1,8 @@
 import { IFlower } from "@interfaces/flower.interface";
+import { FlowersEnum } from "@shared/enums/flowers.enum";
 
 export abstract class AbstractFlower implements IFlower {
-  protected readonly _name: string;
+  protected readonly _name: FlowersEnum;
   protected readonly _worth: number;
   protected readonly _date: Date;
 
