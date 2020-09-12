@@ -1,0 +1,14 @@
+node_modules
+_deployment
+dist
+.env*
+
+.vscode
+.vscode-test
+.vscode/*
+
+.idea
+
+logs
+*.log
+npm-debug.log*
