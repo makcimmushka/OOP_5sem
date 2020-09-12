@@ -6,17 +6,19 @@
   "scripts": {
     "build": "npm install && tsc",
     "start:prod": "npm install && tsc && node dist/index.js",
-    "start:dev": "ts-node-dev src/index.ts",
+    "start:dev": "ts-node src/index.ts",
     "test": "mocha -r ts-node/register ./test/*.spec.ts"
   },
   "_moduleAliases": {
-    "@interfaces": "dist/interfaces/",
-    "@classes": "dist/classes/",
-    "@shared": "dist/shared/"
+    "@interfaces": "dist/interfaces",
+    "@classes": "dist/classes",
+    "@shared": "dist/shared"
   },
   "author": "Maxim Kovalchuk",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^14.10.1",
+    "autobind-decorator": "^2.4.0",
     "module-alias": "^2.2.2"
   },
   "devDependencies": {
