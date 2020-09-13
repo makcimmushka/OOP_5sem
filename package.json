@@ -7,7 +7,7 @@
     "build": "npm install && tsc",
     "start:prod": "npm install && tsc && node dist/index.js",
     "start:dev": "ts-node src/index.ts",
-    "test": "mocha -r ts-node/register ./test/**/*.spec.ts"
+    "test": "mocha -r ts-node/register './test/**/*.spec.ts'"
   },
   "author": "Maxim Kovalchuk",
   "license": "ISC",

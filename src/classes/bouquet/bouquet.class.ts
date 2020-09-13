@@ -5,9 +5,21 @@ import { IBouquet } from "../../interfaces/bouquet/bouquet.interface";
 import { IFlower } from "../../interfaces/flower/flower.interface";
 
 export class Bouquet implements IBouquet {
+  private static instance: Bouquet;
+
   private flowers: Array<IFlower> = [];
   private accessories: Array<IAccessory> = [];
   private totalWorth: number = 0;
+
+  private constructor() {}
+
+  public static getInstance(): Bouquet {
+    if (!Bouquet.instance) {
+      Bouquet.instance = new Bouquet();
+    }
+
+    return Bouquet.instance;
+  }
 
   public getFlowers(): Array<IFlower> {
     return this.flowers;
