@@ -4,7 +4,7 @@ import {
   PinsAccessoryFactory,
 } from "../accessory";
 import { IAbstractAccessoryFactory } from "../../../interfaces/factory/abstract-accessory-factory.interface";
-import { AccessoriesEnum } from "src/shared/enums/accessories.enum";
+import { AccessoriesEnum } from "../../../shared/enums/accessories.enum";
 
 export class ProducerAccessoryFactory {
   private readonly pinsAccessoryFactory: IAbstractAccessoryFactory = new PinsAccessoryFactory();
