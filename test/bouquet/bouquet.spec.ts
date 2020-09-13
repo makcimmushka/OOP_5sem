@@ -46,7 +46,7 @@ describe("Bouquet class tests", function () {
     expect(isDeleted).to.be.equal(false);
   });
 
-  it("Bouquet class should add accessory", function () {
+  it("Bouquet class should add accessory correctly", function () {
     const oldAccessoriesAmount = testingBouquet.getAccessories().length;
     const isAdded = testingBouquet.addAccessory(accessoryMock);
 
