@@ -1,3 +1,5 @@
+import { expect } from "chai";
+
 import {
   magnoliaFlowerMock,
   roseFlowerMock,
@@ -13,7 +15,6 @@ import {
   RoseFlowerFactory,
   TulipFlowerFactory,
 } from "../../../src/classes/factories/flower";
-import { expect } from "chai";
 
 describe("Flowers factories tests", function () {
   it("MagnoliaFlowerFactory should create Magnolia instance", function () {
