@@ -1,4 +1,4 @@
-import { IFlower } from '../../../../src/interfaces/flower/flower.interface';
+import { IFlower } from "../../../../src/interfaces/flower/flower.interface";
 import { FlowersEnum } from "../../../../src/shared/enums/flowers.enum";
 import { getRandomInt } from "../../../../src/shared/utils/random-int.util";
 
@@ -19,9 +19,10 @@ const roseFlowerMock = {
 
 const randomChoice = getRandomInt(1, 3);
 
-export const randomFlowerMock: IFlower =
-  randomChoice == 1
+export function getRandomFlowerMock(): IFlower {
+  return randomChoice == 1
     ? { ...magnoliaFlowerMock, date: new Date() }
     : randomChoice == 2
     ? { ...tulipFlowerMock, date: new Date() }
     : { ...roseFlowerMock, date: new Date() };
+}

@@ -33,31 +33,39 @@ export class Bouquet implements IBouquet {
     return this.accessories;
   }
 
-  public addAccessory(accessory: IAccessory): void {
+  public addAccessory(accessory: IAccessory): boolean {
     this.accessories.push(accessory);
+    return true;
   }
 
-  public addFlower(flower: IFlower): void {
+  public addFlower(flower: IFlower): boolean {
     this.flowers.push(flower);
+    return true;
   }
 
-  public deleteAccessory(accessoryName: AccessoriesEnum): void {
+  public deleteAccessory(accessoryName: AccessoriesEnum): boolean {
     const searchedAccessoryIndex = this.accessories.findIndex(
       (accessory) => accessory.name == accessoryName
     );
 
     if (searchedAccessoryIndex >= 0) {
       this.accessories.splice(searchedAccessoryIndex, 1);
+      return true;
     }
+
+    return false;
   }
 
-  public deleteFlower(flowerName: FlowersEnum): void {
+  public deleteFlower(flowerName: FlowersEnum): boolean {
     const searchedFlowerIndex = this.flowers.findIndex(
       (flower) => flower.name == flowerName
     );
 
     if (searchedFlowerIndex >= 0) {
       this.flowers.splice(searchedFlowerIndex, 1);
+      return true;
     }
+
+    return false;
   }
 }

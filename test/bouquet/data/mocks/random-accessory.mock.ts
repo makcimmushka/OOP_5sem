@@ -19,9 +19,10 @@ const sparklesAccessoryMock = {
 
 const randomChoice = getRandomInt(1, 3);
 
-export const randomAccessoryMock: IAccessory =
-  randomChoice == 1
+export function getRandomAccessoryMock(): IAccessory {
+  return randomChoice == 1
     ? pinsAccessoryMock
     : randomChoice == 2
     ? wrapperAccessoryMock
     : sparklesAccessoryMock;
+}

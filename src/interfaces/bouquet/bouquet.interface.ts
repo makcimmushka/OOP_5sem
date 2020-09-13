@@ -7,8 +7,8 @@ export interface IBouquet {
   getFlowers(): Array<IFlower>;
   getTotalWorth(): number;
   getAccessories(): Array<IAccessory>;
-  addAccessory(accessory: IAccessory): void;
-  addFlower(flower: IFlower): void;
-  deleteAccessory(accessoryName: AccessoriesEnum): void;
-  deleteFlower(flowerName: FlowersEnum): void;
+  addAccessory(accessory: IAccessory): boolean;
+  addFlower(flower: IFlower): boolean;
+  deleteAccessory(accessoryName: AccessoriesEnum): boolean;
+  deleteFlower(flowerName: FlowersEnum): boolean;
 }
