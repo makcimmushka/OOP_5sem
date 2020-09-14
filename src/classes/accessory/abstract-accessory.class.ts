@@ -1,7 +1,7 @@
 import { IAccessory } from "../../interfaces/accessory/accessory.interface";
 import { AccessoriesEnum } from "../../shared/enums/accessories.enum";
 
-export class AbstractAccessory implements IAccessory {
+export abstract class AbstractAccessory implements IAccessory {
   protected readonly _name: AccessoriesEnum;
   protected readonly _worth: number;
 
