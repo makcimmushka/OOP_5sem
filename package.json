@@ -12,7 +12,8 @@
   "author": "Maxim Kovalchuk",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^14.10.1"
+    "@types/node": "^14.10.1",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.12",

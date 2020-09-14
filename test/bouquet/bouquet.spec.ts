@@ -24,7 +24,7 @@ describe("Bouquet tests", function () {
   });
 
   it("Bouquet should return flower by existing stemLength criteria", function () {
-    const randomIndex = getRandomInt(1, 5);
+    const randomIndex = getRandomInt(1, 4);
 
     const searchedFlower = testingBouquet.getFlowerByStemLengthDiapazon(
       flowersMocks[randomIndex].stemLength - 1,

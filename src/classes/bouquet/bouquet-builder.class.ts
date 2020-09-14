@@ -3,8 +3,10 @@ import { IFlower } from "../../interfaces/flower/flower.interface";
 import { Bouquet } from "./bouquet.class";
 
 export class BouquetBuilder {
-  private flowers: Array<IFlower> = [];
-  private accessories: Array<IAccessory> = [];
+  constructor(
+    private flowers: Array<IFlower> = [],
+    private accessories: Array<IAccessory> = []
+  ) {}
 
   public addFlower(flower: IFlower) {
     this.flowers.push(flower);
