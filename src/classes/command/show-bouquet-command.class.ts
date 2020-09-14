@@ -17,9 +17,9 @@ export class ShowBouquetCommand implements ICommand {
 
     for (let flower of flowers) {
       console.log("Name:", flower.name);
-      console.log("Worth:", flower.worth.toFixed(2));
+      console.log("Worth:", flower.worth);
       console.log("Date:", flower.date);
-      console.log("Stem length:", flower.stemLength.toFixed(2));
+      console.log("Stem length:", flower.stemLength);
       console.log("------------------------------");
     }
 
@@ -27,7 +27,7 @@ export class ShowBouquetCommand implements ICommand {
 
     for (let accessory of accessories) {
       console.log("Name:", accessory.name);
-      console.log("Worth:", accessory.worth.toFixed(2));
+      console.log("Worth:", accessory.worth);
       console.log("------------------------------");
     }
 

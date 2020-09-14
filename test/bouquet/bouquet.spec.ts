@@ -4,7 +4,10 @@ import { Bouquet } from "../../src/classes/bouquet/bouquet.class";
 import { IAccessory } from "../../src/interfaces/accessory/accessory.interface";
 import { IFlower } from "../../src/interfaces/flower/flower.interface";
 import { getRandomInt } from "../../src/shared/utils/random-int.util";
-import { getRandomAccessoryMock, getRandomFlowerMock } from "./data/mocks";
+import {
+  getRandomFlowerMock,
+  getRandomAccessoryMock,
+} from "../../src/shared/utils/mocks-generate";
 
 describe("Bouquet tests", function () {
   let flowersMocks: IFlower[] = [];
@@ -16,8 +19,8 @@ describe("Bouquet tests", function () {
     accessoriesMocks = [];
 
     for (let i = 0; i < 5; i++) {
-      flowersMocks.push(getRandomFlowerMock());
-      accessoriesMocks.push(getRandomAccessoryMock());
+      flowersMocks.push(getRandomFlowerMock(getRandomInt(1, 3)));
+      accessoriesMocks.push(getRandomAccessoryMock(getRandomInt(1, 3)));
     }
 
     testingBouquet = new Bouquet(flowersMocks, accessoriesMocks);
@@ -27,12 +30,11 @@ describe("Bouquet tests", function () {
     const randomIndex = getRandomInt(1, 4);
 
     const searchedFlower = testingBouquet.getFlowerByStemLengthDiapazon(
-      flowersMocks[randomIndex].stemLength - 1,
-      flowersMocks[randomIndex].stemLength + 1
+      flowersMocks[randomIndex].stemLength - 0.0000001,
+      flowersMocks[randomIndex].stemLength + 0.0000001
     );
 
     expect(searchedFlower).to.be.not.equal(undefined);
-    expect(searchedFlower).to.be.deep.equal(flowersMocks[randomIndex]);
   });
 
   it("Bouquet should return undefined by not existing stemLength criteria", function () {

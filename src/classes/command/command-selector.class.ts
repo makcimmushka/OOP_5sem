@@ -10,9 +10,23 @@ import {
   SortFlowersCommand,
 } from "./";
 
+import {
+  getRandomAccessoryMock,
+  getRandomFlowerMock,
+} from "../../shared/utils/mocks-generate";
+import { getRandomInt } from "../../shared/utils/random-int.util";
+
+let flowersMocks = [];
+let accessoriesMocks = [];
+
+for (let i = 0; i < 5; i++) {
+  flowersMocks.push(getRandomFlowerMock(getRandomInt(1, 3)));
+  accessoriesMocks.push(getRandomAccessoryMock(getRandomInt(1, 3)));
+}
+
 export class CommandSelector {
   private command: ICommand;
-  private bouquet: Bouquet = new Bouquet([], []);
+  private bouquet: Bouquet = new Bouquet(flowersMocks, accessoriesMocks);
 
   public select(command: string) {
     switch (command) {
@@ -61,8 +75,4 @@ export class CommandSelector {
         break;
     }
   }
-
-//   setBouquet(bouquet: Bouquet) {
-//     this.bouquet = bouquet;
-//   }
 }

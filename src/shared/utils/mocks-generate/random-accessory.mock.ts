@@ -1,6 +1,6 @@
-import { IAccessory } from "../../../../src/interfaces/accessory/accessory.interface";
-import { AccessoriesEnum } from "../../../../src/shared/enums/accessories.enum";
-import { getRandomInt } from "../../../../src/shared/utils/random-int.util";
+import { IAccessory } from "../../../interfaces/accessory/accessory.interface";
+import { AccessoriesEnum } from "../../../shared/enums/accessories.enum";
+import { getRandomInt } from "../../../shared/utils/random-int.util";
 
 const pinsAccessoryMock = {
   name: AccessoriesEnum.Pins,
@@ -17,9 +17,7 @@ const sparklesAccessoryMock = {
   worth: 5,
 };
 
-const randomChoice = getRandomInt(1, 3);
-
-export function getRandomAccessoryMock(): IAccessory {
+export function getRandomAccessoryMock(randomChoice: number): IAccessory {
   return randomChoice == 1
     ? pinsAccessoryMock
     : randomChoice == 2

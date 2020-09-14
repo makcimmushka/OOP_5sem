@@ -3,8 +3,12 @@ import { IFlower } from "../../src/interfaces/flower/flower.interface";
 import { BouquetBuilder } from "../../src/classes/bouquet/bouquet-builder.class";
 import { expect } from "chai";
 
-import { getRandomFlowerMock, getRandomAccessoryMock } from "./data/mocks";
+import {
+  getRandomFlowerMock,
+  getRandomAccessoryMock,
+} from "../../src/shared/utils/mocks-generate";
 import { Bouquet } from "../../src/classes/bouquet/bouquet.class";
+import { getRandomInt } from "../../src/shared/utils/random-int.util";
 
 describe("BouquetBuilder tests", function () {
   const bouquetBuilder = new BouquetBuilder();
@@ -12,8 +16,8 @@ describe("BouquetBuilder tests", function () {
   let accessoryMock: IAccessory;
 
   beforeEach(function () {
-    flowerMock = getRandomFlowerMock();
-    accessoryMock = getRandomAccessoryMock();
+    flowerMock = getRandomFlowerMock(getRandomInt(1, 3));
+    accessoryMock = getRandomAccessoryMock(getRandomInt(1, 3));
   });
 
   it("BouquetBuilder should create bouquet correctly", function () {

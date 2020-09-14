@@ -32,9 +32,9 @@ export class ShowFlowerByDiapazonCommand implements ICommand {
 
     if (flower) {
       console.log("Name:", flower.name);
-      console.log("Worth:", flower.worth.toFixed(2));
+      console.log("Worth:", flower.worth);
       console.log("Date:", flower.date);
-      console.log("Stem length:", flower.stemLength.toFixed(2));
+      console.log("Stem length:", flower.stemLength);
       console.log("------------------------------");
     } else {
       console.log("Flower didn't find");
