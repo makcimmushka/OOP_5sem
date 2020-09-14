@@ -1,5 +1,5 @@
-import { AccessoriesEnum } from "src/shared/enums/accessories.enum";
-import { FlowersEnum } from "src/shared/enums/flowers.enum";
+import { AccessoriesEnum } from "../../shared/enums/accessories.enum";
+import { FlowersEnum } from "../../shared/enums/flowers.enum";
 import { IAccessory } from "../../interfaces/accessory/accessory.interface";
 import { IBouquet } from "../../interfaces/bouquet/bouquet.interface";
 import { IFlower } from "../../interfaces/flower/flower.interface";
