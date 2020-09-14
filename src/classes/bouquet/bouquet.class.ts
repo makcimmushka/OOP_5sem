@@ -12,6 +12,22 @@ export class Bouquet {
     return this.flowers;
   }
 
+  public getAccessories(): Array<IAccessory> {
+    return this.accessories;
+  }
+
+  public getFlowerByStemLengthDiapazon(
+    minimumLength: number,
+    maximumLength: number
+  ): IFlower {
+    const flower = this.flowers.find(
+      (flower) =>
+        flower.stemLength >= minimumLength && flower.stemLength <= maximumLength
+    );
+
+    return flower;
+  }
+
   public calculateTotalWorth(): number {
     const flowersWorth = this.flowers.reduce(
       (totalWorth, flower) => totalWorth + flower.worth,
@@ -26,7 +42,11 @@ export class Bouquet {
     return flowersWorth + accessoriesWorth;
   }
 
-  public getAccessories(): Array<IAccessory> {
-    return this.accessories;
+  public sortFlowersByDate(): Array<IFlower> {
+    this.flowers.sort((prevFlower, nextFlower) => {
+      return prevFlower.date.getTime() - nextFlower.date.getTime();
+    });
+
+    return this.flowers;
   }
 }

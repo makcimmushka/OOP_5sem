@@ -3,8 +3,8 @@ import { IAbstractFlowerFactory } from "../../../interfaces/factory/abstract-flo
 import { MagnoliaFlower } from "../../../classes/flower/magnolia-flower.class";
 
 export class MagnoliaFlowerFactory implements IAbstractFlowerFactory {
-  createFlower(): IFlower {
-    const magnolia = new MagnoliaFlower();
+  createFlower(stemLength: number): IFlower {
+    const magnolia = new MagnoliaFlower(stemLength);
     return magnolia;
   }
 }

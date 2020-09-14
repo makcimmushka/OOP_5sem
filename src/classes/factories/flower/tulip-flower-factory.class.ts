@@ -3,8 +3,8 @@ import { IAbstractFlowerFactory } from "../../../interfaces/factory/abstract-flo
 import { TulipFlower } from "../../../classes/flower/tulip-flower.class";
 
 export class TulipFlowerFactory implements IAbstractFlowerFactory {
-  createFlower(): IFlower {
-    const tulip = new TulipFlower();
+  createFlower(stemLength: number): IFlower {
+    const tulip = new TulipFlower(stemLength);
     return tulip;
   }
 }
