@@ -1,4 +1,6 @@
 const prompt = require("prompt-sync")();
+
+import { isCommandValid } from "../../shared/utils/validation/validators.util";
 import { CommandSelector } from "../command";
 
 export class ApplicationFacade {
@@ -11,15 +13,10 @@ export class ApplicationFacade {
       console.log("");
 
       const command = Number(prompt("Enter your command: ").trim());
-      
+
       console.log("");
 
-      if (
-        !isNaN(command) &&
-        Number.isInteger(command) &&
-        command >= 1 &&
-        command <= 7
-      ) {
+      if (isCommandValid(command)) {
         this.commandSelector.select(command.toString());
       } else {
         console.log("Uncorrect command! Try again!");

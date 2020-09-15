@@ -24,3 +24,9 @@ export function isAccessoryNameValid(accessoryName: string): boolean {
 
   return false;
 }
+
+export function isCommandValid(command: number): boolean {
+  return (
+    !isNaN(command) && Number.isInteger(command) && command >= 1 && command <= 7
+  );
+}
