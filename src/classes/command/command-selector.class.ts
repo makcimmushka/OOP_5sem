@@ -26,43 +26,46 @@ for (let i = 0; i < 5; i++) {
 
 export class CommandSelector {
   private command: ICommand;
-  private bouquet: Bouquet = new Bouquet(flowersMocks, accessoriesMocks);
+  private _bouquet: Bouquet = new Bouquet(
+    [...flowersMocks],
+    [...accessoriesMocks]
+  );
 
-  public select(command: string) {
-    switch (command) {
+  public select(commandName: string) {
+    switch (commandName) {
       case "1":
         this.command = new ShowInstructionsCommand();
         this.command.execute();
         break;
 
       case "2":
-        this.command = new ShowBouquetCommand(this.bouquet);
+        this.command = new ShowBouquetCommand(this._bouquet);
         this.command.execute();
         break;
 
       case "3":
         this.command = new AddFlowerCommand(
-          this.bouquet.getFlowers(),
-          this.bouquet.getAccessories()
+          this._bouquet.getFlowers(),
+          this._bouquet.getAccessories()
         );
-        this.bouquet = this.command.execute() as Bouquet;
+        this._bouquet = this.command.execute() as Bouquet;
         break;
 
       case "4":
         this.command = new AddAccessoryCommand(
-          this.bouquet.getFlowers(),
-          this.bouquet.getAccessories()
+          this._bouquet.getFlowers(),
+          this._bouquet.getAccessories()
         );
-        this.bouquet = this.command.execute() as Bouquet;
+        this._bouquet = this.command.execute() as Bouquet;
         break;
 
       case "5":
-        this.command = new SortFlowersCommand(this.bouquet);
-        this.bouquet = this.command.execute() as Bouquet;
+        this.command = new SortFlowersCommand(this._bouquet);
+        this._bouquet = this.command.execute() as Bouquet;
         break;
 
       case "6":
-        this.command = new ShowFlowerByDiapazonCommand(this.bouquet);
+        this.command = new ShowFlowerByDiapazonCommand(this._bouquet);
         this.command.execute();
         break;
 

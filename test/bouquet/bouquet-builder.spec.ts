@@ -1,7 +1,8 @@
+import { expect } from "chai";
+
 import { IAccessory } from "../../src/interfaces/accessory/accessory.interface";
 import { IFlower } from "../../src/interfaces/flower/flower.interface";
 import { BouquetBuilder } from "../../src/classes/bouquet/bouquet-builder.class";
-import { expect } from "chai";
 
 import {
   getRandomFlowerMock,
