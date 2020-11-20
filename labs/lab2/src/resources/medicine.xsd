@@ -1,1 +1,58 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"><xs:element name="comment" type="xs:string"/></xs:schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="medicines">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="medicine" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="name"/>
+              <xs:element type="xs:string" name="pharm"/>
+              <xs:element type="xs:string" name="group"/>
+              <xs:element name="analogs">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="analog" maxOccurs="unbounded" minOccurs="1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="versions">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="version" maxOccurs="unbounded" minOccurs="1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="certificate">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:integer" name="number"/>
+                    <xs:element type="xs:string" name="date"/>
+                    <xs:element type="xs:string" name="organization"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="package">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="type"/>
+                    <xs:element type="xs:integer" name="amount"/>
+                    <xs:element type="xs:decimal" name="price"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="dosage">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:integer" name="dose"/>
+                    <xs:element type="xs:integer" name="periodicity"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:integer" name="id" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
