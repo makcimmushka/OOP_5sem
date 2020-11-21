@@ -10,8 +10,8 @@
               <xs:element type="xs:string" name="group"/>
               <xs:element name="analogs">
                 <xs:complexType>
-                  <xs:sequence>
-                    <xs:element type="xs:string" name="analog" maxOccurs="unbounded" minOccurs="1"/>
+                  <xs:sequence maxOccurs="unbounded" minOccurs="1">
+                    <xs:element type="xs:string" name="analog"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>

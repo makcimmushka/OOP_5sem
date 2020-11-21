@@ -1,7 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { IFileReader } from '../interfaces';
 
-export class FileReader {
+
+export class FileReader implements IFileReader {
   private readonly basePath = path.join(__dirname, '..', 'resources');
   
   readFile(fileName: string): string {

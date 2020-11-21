@@ -1,8 +1,11 @@
-import { FileReader } from './classes/file-reader';
-import { XmlValidator } from './classes/xml-validator';
+import { FileReader, XmlDomParser, XmlValidator } from './classes';
+
 
 const fileReader = new FileReader();
+const xmlValidator = new XmlValidator(fileReader);
 
-const validator = new XmlValidator(fileReader);
+// console.log(xmlValidator.validate('medicine.xml', 'medicine.xsd'));
 
-console.log(validator.validate('test.xml', 'test.xsd'));
+const parser = new XmlDomParser(fileReader, xmlValidator);
+
+console.log(parser.parse('medicine.xml', 'medicine.xsd'));

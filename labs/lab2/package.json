@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "libxmljs": "^0.19.7",
+    "xmlchecker": "^0.1.0",
     "xmldom": "^0.4.0"
   }
 }

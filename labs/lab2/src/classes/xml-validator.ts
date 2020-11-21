@@ -1,17 +1,22 @@
 import * as libxml from 'libxmljs';
-import { IFileReader } from '../interfaces';
+import { IXmlValidator, IFileReader } from '../interfaces/';
 
-export class XmlValidator {
+export class XmlValidator implements IXmlValidator {
   constructor(private readonly fileReader: IFileReader) {}
 
   validate(xmlFile: string, xsdFile: string): boolean {
-    const xml = this.fileReader.readFile(xmlFile);
-    const xsd = this.fileReader.readFile(xsdFile);
+    try {
+      const xml = this.fileReader.readFile(xmlFile);
+      const xsd = this.fileReader.readFile(xsdFile);
 
-    const xsdDoc = libxml.parseXml(xsd);
-    const xmlDoc = libxml.parseXml(xml);
+      const xsdDoc = libxml.parseXml(xsd);
+      const xmlDoc = libxml.parseXml(xml);
 
-    const isValid = xmlDoc.validate(xsdDoc);
-    return isValid;
+      const isValid = xmlDoc.validate(xsdDoc);
+      return isValid;
+    } catch (e) {
+      console.error(e.message);
+      return false;
+    }
   }
 }

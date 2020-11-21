@@ -1,4 +1,4 @@
 export interface Dosage {
-  dosage: number;
+  dose: number;
   periodicity: number;
 }
