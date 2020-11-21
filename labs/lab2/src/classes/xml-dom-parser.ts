@@ -53,7 +53,7 @@ export class XmlDomParser {
       const certificateTag = medicineTag.getElementsByTagName('certificate')[0];
       const numberTag = certificateTag.getElementsByTagName('number')[0];
       const dateTag = certificateTag.getElementsByTagName('date')[0];
-      const organizationTag = certificateTag.getElementsByTagName('date')[0];
+      const organizationTag = certificateTag.getElementsByTagName('organization')[0];
 
       medicine.certificate = {
         number: +this.retrieveTagValue(numberTag),
