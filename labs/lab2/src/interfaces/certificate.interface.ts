@@ -1,5 +1,5 @@
 export interface Certificate {
   number: number;
-  date: Date;
+  date: Date; /* Expiration date */
   organization: string;
 };
