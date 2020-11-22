@@ -1,6 +1,6 @@
-import { Certificate, Dosage, Package, Comparator } from '../interfaces';
+import { Certificate, Dosage, Package, Comparator, IMedicine } from '../interfaces';
 
-export class Medicine implements Comparator {
+export class Medicine implements IMedicine, Comparator {
   public name: string;
   public pharm: string;
   public group: string;

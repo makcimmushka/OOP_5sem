@@ -1,6 +1,6 @@
-import { Medicine } from '../classes';
+import { IMedicine } from '../interfaces';
 
-export const medicinesToTest: Array<Medicine> = [
+export const medicinesToTest: Array<IMedicine> = [
   {
     analogs: ['Bumidol', 'Deblock'],
     versions: ['Pills', 'Capsules'],

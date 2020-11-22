@@ -1,4 +1,3 @@
-import { medicinesToTest, randomDate, randomNumber } from '../test';
 import { Medicine } from './medicine';
 
 describe('Medicine', () => {
@@ -14,33 +13,32 @@ describe('Medicine', () => {
 
   describe('`compareByDate`', () => {
     it('should return true if date is lower or false otherwise', () => {
+      const now = Date.now();
       medicine.certificate = {
-        date: randomDate(),
+        date: new Date(now + 1),
       } as any;
-      const mockMedicine = {
-        certificate: {
-          date: randomDate(),
-        },
+      const medicineWithLowerDate = new Medicine();
+      medicineWithLowerDate.certificate = {
+        date: new Date(now),
       } as any;
 
-      expect(medicine.compareByDate(mockMedicine)).toEqual(
-        medicine.certificate.date.getTime() < mockMedicine.certificate.date.getTime(),
-      );
+      expect(medicineWithLowerDate.compareByDate(medicine)).toBeTruthy();
+      expect(medicine.compareByDate(medicineWithLowerDate)).toBeFalsy();
     });
   });
 
   describe('`compareByPrice`', () => {
     it('should return true if price is greater/equal or false otherwise', () => {
       medicine.package = {
-        price: randomNumber(),
+        price: 1,
       } as any;
-      const mockMedicine = {
-        package: {
-          price: randomNumber(),
-        },
+      const medicineWithGreaterPrice = new Medicine();
+      medicineWithGreaterPrice.package = {
+        price: 2,
       } as any;
 
-      expect(medicine.compareByPrice(mockMedicine)).toEqual(medicine.package.price >= mockMedicine.package.price);
+      expect(medicineWithGreaterPrice.compareByPrice(medicine)).toBeTruthy();
+      expect(medicine.compareByPrice(medicineWithGreaterPrice)).toBeFalsy();
     });
   });
 });

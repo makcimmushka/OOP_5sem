@@ -1,7 +1,7 @@
-import { IXmlValidator, IFileReader } from '../interfaces';
+import { IXmlValidator, IFileReader, IMedicine } from '../interfaces';
 import { XmlDomParser } from './xml-dom-parser';
 import { medicineXml, medicinesToTest } from '../test';
-import { Medicine } from './medicine';
+
 
 describe('XmlDomParser', () => {
   let xmlDomParser: XmlDomParser;
@@ -35,7 +35,7 @@ describe('XmlDomParser', () => {
       expect(readFileSpy).toHaveBeenCalledWith(xmlFile);
 
       medicines.forEach((medicine, ind) => {
-        expect(medicine).toMatchObject<Medicine>(medicinesToTest[ind]);
+        expect(medicine).toMatchObject<IMedicine>(medicinesToTest[ind]);
       });
     });
 
